@@ -11,7 +11,7 @@ RUN apk update && \
      apk add jpeg-dev zlib-dev && \
      apk add mailcap && \
      set -e; \
-     apk add --no-cache --virtual .build-deps \
+     apk add --no-cache \
          gcc \
          libc-dev \
          linux-headers
@@ -20,7 +20,5 @@ RUN  pip3.6 install --upgrade pip && \
      pip3.6 install -U setuptools && \
      pip3.6 install uwsgi
 
-RUN pip3.6 install --no-cache-dir numpy \
+RUN pip3.6 install --no-cache-dir numpy==1.14.3 \
     && rm -rf /var/cache/apk/*
-
-RUN apk del .build-deps
