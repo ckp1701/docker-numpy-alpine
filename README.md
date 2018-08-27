@@ -5,6 +5,6 @@ This image is constructed using the alpine base image at the time of build.
 
 ### Testing 
 ```bash
-docker build . -t test
-docker run -it test ash
+docker build . -t docker-numpy-alpine
+docker run -it docker-numpy-alpine
 ```
